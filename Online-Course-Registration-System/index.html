@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Course Registration System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOGIN PAGE -->
+  <div class="container" id="loginBox">
+    <h2>Student Login</h2>
+    <input type="text" id="username" placeholder="Enter Username" />
+    <input type="password" id="password" placeholder="Enter Password" />
+    <button onclick="login()">Login</button>
+
+  </div>
+
+  <!-- MAIN PAGE -->
+  <div class="main" id="mainBox">
+
+    <header>
+      <div class="brand">
+        <div class="logo">🎓</div>
+        <h1>Online Course Registration System</h1>
+      </div>
+      <button onclick="logout()" class="logout-btn">↪ Logout</button>
+    </header>
+
+    <section class="courses">
+      <div class="section-title">
+        <div class="section-icon">📖</div>
+        <div>
+          <h2>Available Courses</h2>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-icon web">💻</div>
+        <div class="course-info">
+          <h3>Web Development</h3>
+          <h4>HTML, CSS, JavaScript</h4>
+          <p>Learn to build modern and responsive websites.</p>
+        </div>
+        <div class="course-bottom">
+          <button onclick="selectCourse('Web Development')">Register Now →</button>
+          <p>⏱ 6 Weeks</p>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-icon python">🐍</div>
+        <div class="course-info">
+          <h3>Python Programming</h3>
+          <h4>Basics, OOP, Projects</h4>
+          <p>Start from basics and become proficient in Python programming.</p>
+        </div>
+        <div class="course-bottom">
+          <button onclick="selectCourse('Python Programming')">Register Now →</button>
+          <p>⏱ 8 Weeks</p>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-icon db">🗄️</div>
+        <div class="course-info">
+          <h3>Database Management</h3>
+          <h4>SQL, DBMS Concepts</h4>
+          <p>Learn SQL and database management system concepts in depth.</p>
+        </div>
+        <div class="course-bottom">
+          <button onclick="selectCourse('Database Management')">Register Now →</button>
+          <p>⏱ 5 Weeks</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="section-title">
+        <div class="section-icon">📋</div>
+        <div>
+          <h2>Registration Form</h2>
+          <p>Fill in the details to register for a course</p>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <input type="text" id="studentName" placeholder="👤  Your Name" />
+        <input type="email" id="email" placeholder="✉️  Email Address" />
+        <input type="text" id="selectedCourse" placeholder="📖  Select Course" readonly />
+        <input type="text" id="phone" placeholder="📞  Phone Number" />
+        <input type="date" id="date" />
+        <button onclick="submitRegistration()" class="submit-btn">Submit Registration 📨</button>
+      </div>
+    </section>
+
+    <section class="registered">
+      <div class="registered-header">
+        <h2>Registered Students Dashboard</h2>
+        <div class="dashboard-tools">
+          <input type="text" id="searchStudent" placeholder="Search Student..." onkeyup="searchStudent()" />
+          <div class="student-count">Total Registered: <span id="totalStudents">0</span></div>
+        </div>
+      </div>
+
+      <div class="table-box">
+        <table>
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Student Name</th>
+              <th>Email</th>
+              <th>Course</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="studentTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
